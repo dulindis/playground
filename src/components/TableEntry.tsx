@@ -8,51 +8,20 @@ interface Element {
 }
 interface TableEntryProps {
   element: Element;
+  name: string;
+  value: string;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  // handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
-const TableEntry: React.FC<TableEntryProps> = ({ element, onChange }) => {
+const TableEntry: React.FC<TableEntryProps> = (props) => {
+  const { name, value, onChange } = props;
+
   return (
-    // <tr key={element.id}>
-    //   <td>{element.id}</td>
-    //   <td>{element.title}</td>
-    //   <td>{element.body}</td>
-    //   <td>
-    //     <button onClick={onChange}>EDIT</button>
-    //   </td>
-    // </tr>
-    // <tr key={row.id}>
-    //   <td>{row.id}</td>
-    //   <td>
-    //     {editableRowIndex === index ? (
-    //       <input
-    //         type="text"
-    //         value={row.name}
-    //         onChange={(event) => handleInputChange(event, index)}
-    //       />
-    //     ) : (
-    //       row.name
-    //     )}
-    //   </td>
-    //   <td>
-    //     {editableRowIndex === index ? (
-    //       <input
-    //         type="text"
-    //         value={row.age}
-    //         onChange={(event) => handleInputChange(event, index)}
-    //       />
-    //     ) : (
-    //       row.age
-    //     )}
-    //   </td>
-    //   <td>
-    //     {editableRowIndex === index ? (
-    //       <button onClick={() => handleSaveClick()}>Save</button>
-    //     ) : (
-    //       <button onClick={() => handleEditClick(index)}>Edit</button>
-    //     )}
-    //   </td>
-    // </tr>
+    <input
+      type="text"
+      name={name}
+      value={value}
+      onChange={onChange}
+    />
   );
 };
 

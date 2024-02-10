@@ -75,8 +75,7 @@ const Table: React.FC = () => {
                 <td>{element.id}</td>
                 <td>
                   {editableRowIndex === index ? (
-                    <input
-                      type="text"
+                    <TableEntry
                       name="title"
                       value={element.title}
                       onChange={(event) => handleInputChange(event, index)}
@@ -87,8 +86,7 @@ const Table: React.FC = () => {
                 </td>
                 <td>
                   {editableRowIndex === index ? (
-                    <input
-                      type="text"
+                    <TableEntry
                       name="body"
                       value={element.body}
                       onChange={(event) => handleInputChange(event, index)}
@@ -111,28 +109,6 @@ const Table: React.FC = () => {
               <td colSpan={4}>Loading...</td>
             </tr>
           )}
-
-          {/* {data.length > 0 ? (
-            data.map((element, index) =>
-              editableRowIndex === index ? (
-                <input
-                  type="text"
-                  value={element.title}
-                  onChange={(event) => handleInputChange(event, index)}
-                />
-              ) : (
-                <TableEntry
-                  key={element.id}
-                  element={element}
-                  onChange={event => handleEditClick(event, index)}
-                />
-              )
-            )
-          ) : (
-            <tr>
-              <td colSpan={4}>Loading...</td>
-            </tr>
-          )} */}
         </tbody>
       </table>
     </div>
